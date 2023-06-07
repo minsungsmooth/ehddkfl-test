@@ -1,0 +1,47 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    double num1, num2;  // 입력받을 숫자 변수
+    char op;  // 입력받을 연산자 변수
+    double result;  // 계산 결과 변수
+
+    cout << "첫 번째 숫자를 입력하세요: ";
+    cin >> num1;
+
+    cout << "두 번째 숫자를 입력하세요: ";
+    cin >> num2;
+
+    cout << "연산자를 입력하세요 (+, -, *, /): ";
+    cin >> op;
+
+    // 입력된 연산자에 따라 계산 수행
+    switch(op) {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+            // 두 번째 숫자가 0이 아닌지 확인 후 나눗셈 수행
+            if (num2 != 0) {
+                result = num1 / num2;
+            } else {
+                cout << "0으로 나눌 수 없습니다." << endl;
+                return 0;
+            }
+            break;
+        default:
+            cout << "잘못된 연산자입니다." << endl;
+            return 0;
+    }
+
+    cout << "결과: " << result << endl;
+
+    return 0;
+}
